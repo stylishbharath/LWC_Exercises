@@ -1,7 +1,7 @@
 @REM Execute in Windows using: .\EXFiles\scripts\CreateOrg.bat
 @echo off
 echo "*** Creating scratch Org..."
-call sfdx force:org:create -f config/project-scratch-def.json --setdefaultusername --setalias soDEX602 -d 30
+call sfdx force:org:create -f config/project-scratch-def.json --setdefaultusername --setalias soDX602 -d 30
 echo "*** Opening scratch Org..."
 call sfdx force:org:open
 echo "*** Pushing metadata to scratch Org..."
