@@ -1,32 +1,36 @@
 <template>
-	<div class="slds-var-m-bottom_small">
-		<lightning-card title="Filter Students" icon-name="utility:search">
-			<lightning-layout horizontal-align="center">
-				<!-- Instructors drop-down -->
-				<lightning-layout-item padding="around-small" size="4">
-					<lightning-combobox
-						name="instructor"
-						label="Select Instructor"
-						variant="label-hidden"
-						options={instructors}
-						value={selectedInstructorId}
-						placeholder="Select an instructor"
-						onchange={onInstructorChange}
-					>
-					</lightning-combobox>
-				</lightning-layout-item>
-				<lightning-combobox
-					name="deliverySelector"
-					label="Select Delivery"
-					variant="label-hidden"
-					value={selectedDeliveryId}
-					placeholder="Select a delivery"
-					options={deliveries}
-				>
-				</lightning-combobox>
-				<!-- Deliveries drop-down -->
-				<lightning-layout-item padding="around-small" size="4"> </lightning-layout-item>
-			</lightning-layout>
-		</lightning-card>
-	</div>
+    <lightning-card>
+        <lightning-layout horizontal-align="center">
+            <!-- Instructors drop-down -->
+
+            <lightning-layout-item padding="around-small" size="4">
+                <lightning-combobox
+                    name="instructor"
+                    label="Select
+                    Instructor"
+                    variant="label-hidden"
+                    options={instructors}
+                    value={selectedInstructorId}
+                    placeholder="Select an
+                    instructor "
+                    onchange={onInstructorChange}
+                >
+                </lightning-combobox>
+            </lightning-layout-item>
+            <!-- Deliveries drop-down -->
+            <lightning-layout-item padding="around-small" size="4">
+                <lightning-combobox
+                    name="deliverySelector"
+                    label="Select
+                Delivery"
+                    variant="label-hidden"
+                    value={selectedDeliveryId}
+                    placeholder="Select a delivery"
+                    options={deliveries}
+                    onchange={onDeliveryChange}
+                >
+                </lightning-combobox>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
 </template>
