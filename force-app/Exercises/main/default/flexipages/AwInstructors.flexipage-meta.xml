@@ -12,6 +12,15 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>studentDetail</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>region2</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>context</name>
                     <value>BOOKMARKS</value>
@@ -19,10 +28,6 @@
                 <componentName>forceChatter:exposedFeed</componentName>
             </componentInstance>
         </itemInstances>
-        <name>region2</name>
-        <type>Region</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <name>region3</name>
         <type>Region</type>
     </flexiPageRegions>
