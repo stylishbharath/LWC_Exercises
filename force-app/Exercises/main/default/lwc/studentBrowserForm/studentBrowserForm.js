@@ -1,11 +1,13 @@
 import { LightningElement, wire } from "lwc";
 import getInstructors from "@salesforce/apex/StudentBrowserForm.getInstructors";
 import getDeliveriesByInstructor from "@salesforce/apex/StudentBrowserForm.getDeliveriesByInstructor";
-export default class StudentBrowserForm extends LightningElement {
+import { NavigationMixin } from 'lightning/navigation';
+import { encodeDefaultFieldValues } from 'lightning/pageReferenceUtils';
+export default class StudentBrowserForm extends NavigationMixin(LightningElement ) {
 	selectedInstructorId = "";
 	deliveries = [];
 	selectedDeliveryId = "";
-
+	isButtonDisabled = true;
 	instructors = [];
 	error;
 	@wire(getInstructors)
@@ -47,12 +49,31 @@ export default class StudentBrowserForm extends LightningElement {
 	onInstructorChange(event) {
 		this.selectedDeliveryId = "";
 		this.selectedInstructorId = event.target.value;
+		this.isButtonDisabled = this.selectedInstructorId === "";
 		this.notifyParent();
 	}
 
 	onDeliveryChange(event) {
 		this.selectedDeliveryId = event.target.value;
 		this.notifyParent();
+	}
+
+	onAddNewDelivery() {
+		// Opens the new Course Delivery record modal dialog
+		// with the selected InstructorId prepopulated
+		const pageInfo = {
+			type: "standard__objectPage",
+			attributes: {
+				objectApiName: "Course_Delivery__c",
+				actionName: "new"
+			},
+			state: {
+				defaultFieldValues: encodeDefaultFieldValues({
+					Instructor__c: this.selectedInstructorId
+				})
+			}
+		};
+		this[NavigationMixin.Navigate](pageInfo);
 	}
 
 	notifyParent() {
