@@ -31,5 +31,6 @@
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
     <tabs>TripReport__c</tabs>
+    <tabs>AwInstructors_Cmp_Tab</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>
