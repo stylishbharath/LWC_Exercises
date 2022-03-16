@@ -1,5 +1,5 @@
-<aura:application extends = "force:slds">
-<aura:attribute name = "listview" type = "String" default = "visible"/>
+<aura:application extends = "force:slds" template="c:AwAppTemplate">
+<aura:attribute name = "listView" type = "String" default = "visible"/>
 <aura:attribute name="markersTitle" type="String" default="All Worldwide Deliveries" />
 	<lightning:layout class="slds-var-p-around_medium" multipleRows="true">
 		
